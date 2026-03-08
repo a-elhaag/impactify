@@ -27,7 +27,7 @@ interface HistoryItem {
 export default function URLCleaner() {
   const githubRepoUrl = "https://github.com/a-elhaag/impactify";
   const githubIssuesUrl = `${githubRepoUrl}/issues`;
-  const githubContributingUrl = `${githubRepoUrl}#readme`;
+  const githubContributingUrl = `${githubRepoUrl}#contributing`;
 
   const [url, setUrl] = useState("");
   const [contributorId, setContributorId] = useState("");

@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Impactify
+
+Impactify is a small Next.js app for cleaning noisy URLs and appending a contributor tag. It removes common tracking parameters such as `utm_*`, `fbclid`, `gclid`, and similar query values, then generates a clean shareable link that you can copy and keep in local history.
+
+## Features
+
+- Removes common tracking parameters from pasted URLs
+- Appends a `contributor` query parameter when a contributor ID is provided
+- Saves contributor ID in local storage for faster repeat use
+- Stores up to 10 recent unique links locally in the browser
+- Provides quick access to issue reporting and contribution entry points
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Lucide React icons
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Build for production:
 
-## Learn More
+```bash
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open `http://localhost:3000` in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+app/
+	components/
+		URLCleaner.tsx
+	globals.css
+	layout.tsx
+	page.tsx
+public/
+```
 
-## Deploy on Vercel
+## How It Works
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Paste a URL into the generator.
+2. Optionally enter a contributor ID.
+3. Click `Generate Clean Link`.
+4. Copy the cleaned output or reuse it from the history panel.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+Contributions are welcome. If you want to improve the UI, add URL-cleaning rules, or refine the workflow:
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Run `pnpm build` before opening a pull request.
+5. Submit a pull request with a short description of the change.
+
+## Issues
+
+If you find a bug or want to request a feature, open an issue in the repository issues tab.
+
+## License
+
+Add the project license here if you want to publish one.
