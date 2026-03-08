@@ -14,6 +14,7 @@ import {
   Shield,
   History,
   WandSparkles,
+  Github,
 } from "lucide-react";
 
 interface HistoryItem {
@@ -24,6 +25,10 @@ interface HistoryItem {
 }
 
 export default function URLCleaner() {
+  const githubRepoUrl = "https://github.com/a-elhaag/url-parameter-cleaner";
+  const githubIssuesUrl = `${githubRepoUrl}/issues`;
+  const githubContributingUrl = `${githubRepoUrl}#readme`;
+
   const [url, setUrl] = useState("");
   const [contributorId, setContributorId] = useState("");
   const [cleanedUrl, setCleanedUrl] = useState("");
@@ -498,19 +503,42 @@ export default function URLCleaner() {
         </aside>
       </section>
 
-      <div className="mt-5 flex items-center justify-center gap-2 text-center">
-        <div className="soft-icon flex h-6 w-6 items-center justify-center rounded-lg text-[var(--primary)]">
-          <Zap size={11} />
+      <div className="mt-5 flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
+        <div className="flex items-center justify-center gap-2 sm:justify-start">
+          <div className="soft-icon flex h-6 w-6 items-center justify-center rounded-lg text-[var(--primary)]">
+            <Zap size={11} />
+          </div>
+          <p
+            className="text-xs font-medium"
+            style={{ color: "var(--muted-foreground)" }}
+          >
+            <span className="font-bold" style={{ color: "var(--foreground)" }}>
+              Impactify
+            </span>
+            {" · "}Cleaner links with local-only history
+          </p>
         </div>
-        <p
-          className="text-xs font-medium"
-          style={{ color: "var(--muted-foreground)" }}
-        >
-          <span className="font-bold" style={{ color: "var(--foreground)" }}>
-            Impactify
-          </span>
-          {" · "}Cleaner links with local-only history
-        </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-end">
+          <a
+            href={githubIssuesUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="soft-button-secondary inline-flex h-10 items-center gap-2 rounded-[1rem] px-4 text-xs font-semibold"
+          >
+            <Github size={14} />
+            Issues
+          </a>
+          <a
+            href={githubContributingUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="soft-button-secondary inline-flex h-10 items-center gap-2 rounded-[1rem] px-4 text-xs font-semibold"
+          >
+            <Github size={14} />
+            Contributing
+          </a>
+        </div>
       </div>
     </div>
   );
