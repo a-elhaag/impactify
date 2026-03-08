@@ -2,8 +2,8 @@ import URLCleaner from "./components/URLCleaner";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-black font-sans py-12">
+    <main className="min-h-screen w-full px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <URLCleaner />
-    </div>
+    </main>
   );
 }
